@@ -1,0 +1,107 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #443d3a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav ul li a.active {
+    text-decoration: underline;
+}
+
+/* Donate Section */
+.donate {
+    background-color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    color: #333;
+}
+
+.donate h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.donate p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+#donation-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#donation-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#donation-form input[type="text"],
+#donation-form input[type="number"],
+#donation-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#donation-form button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #363230;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#donation-form button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}

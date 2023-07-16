@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Charity | About Us</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="about">
+        <div>
+            <h1 data-value="ABOUT US ">ABOUT US</h1>
+        </div>
+        <div class="container">
+            <p>Your Charity is a non-profit organization committed to making the world a better place. With the support of our donors and volunteers, we strive to address critical issues and bring about lasting change.</p>
+            <p>Our mission is to provide support and resources to those in need, creating opportunities for a brighter future. Through our dedicated team and collaborative partnerships, we work towards building sustainable solutions and empowering communities.</p>
+            <a href="donate.html" class="btn">Donate</a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Your Charity. All rights reserved.</p>
+    </footer>
+
+    <script >const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        let interval = null;
+        
+        document.querySelector("h1").onmouseover = event => {  
+          let iteration = 0;
+          
+          clearInterval(interval);
+          
+          interval = setInterval(() => {
+            event.target.innerText = event.target.innerText
+              .split("")
+              .map((letter, index) => {
+                if(index < iteration) {
+                  return event.target.dataset.value[index];
+                }
+              
+                return letters[Math.floor(Math.random() * 26)]
+              })
+              .join("");
+            
+            if(iteration >= event.target.dataset.value.length){ 
+              clearInterval(interval);
+            }
+            
+            iteration += 1 / 3;
+          }, 30);
+        }
+        </script>
+</body>
+</html>

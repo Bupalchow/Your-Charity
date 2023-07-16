@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Charity | Projects</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav data-toggled="false" data-transitionable="false">
+        <div id="nav-logo-section" class="nav-section">
+          <a href="#">
+            <i class="fa-solid fa-dumpster-fire"></i>
+          </a>
+        </div>
+        <div id="nav-mobile-section">
+          <div id="nav-link-section" class="nav-section">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="donate.html">Donate </a>
+          </div>
+          </div>
+        </div>
+        <button id="nav-toggle-button" type="button" onclick="handleNavToggle()">
+          <span>Menu</span>
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+      
+      <main>
+        <article data-index="0" data-status="active">
+          <div class="article-image-section article-section"></div>
+          <div class="article-description-section article-section">
+            <p>
+              Orphanage charity awareness aims to spread knowledge and understanding about the needs of orphanages and the children they support. It focuses on promoting the importance of contributing to these charitable organizations and helping orphaned children lead better lives. Through various campaigns and initiatives, it seeks to engage the community, businesses, and individuals in providing financial aid, resources, and emotional support to orphanages
+            </p>
+          </div>
+          <div class="article-title-section article-section">
+            <h2>Orphanage Charity Awareness</h2>
+            <i class="fa-light fa-plus-large"></i>
+          </div>
+          <div class="article-nav-section article-section">
+            <button class="article-nav-button" type="button" onclick="handleLeftClick()">
+              Prev
+            </button>
+            <button class="article-nav-button" type="button" onclick="handleRightClick()">
+              Next
+            </button>
+          </div>
+        </article>
+        <article data-index="1" data-status="inactive">    
+          <div class="article-image-section article-section"></div>
+          <div class="article-description-section article-section">
+            <p>Orphanage charity volunteering is a noble endeavor where compassionate individuals offer their time and support to help vulnerable children in need. Through various activities and engagement, volunteers strive to create a positive impact on the lives of these children, providing them with care, education, and emotional support. This selfless act fosters a sense of community and empowerment, as volunteers work towards building a brighter future for the children at the orphanage.</p>
+          </div>
+          <div class="article-title-section article-section">
+              <h2>Orphanage Charity Volunteering</h2>
+            <i class="fa-light fa-plus-large"></i>
+          </div>
+          <div class="article-nav-section article-section">
+            <button class="article-nav-button" class="arrow-button" type="button" onclick="handleLeftClick()">
+              Prev
+            </button>
+            <button class="article-nav-button" class="arrow-button" type="button" onclick="handleRightClick()">
+              Next
+            </button>
+          </div>
+        </article>
+        <article data-index="2" data-status="inactive">    
+          <div class="article-image-section article-section"></div>
+          <div class="article-description-section article-section">
+            <p>Visiting the orphanage school provides an opportunity to make a positive impact on the lives of vulnerable children. It allows us to show our support, compassion, and care, offering them a sense of belonging and hope for the future. Through meaningful interactions and activities, we can uplift their spirits and create cherished memories that may brighten their lives. By engaging with these children, we contribute to a nurturing environment that fosters their growth and well-being.</p>
+          </div>
+          <div class="article-title-section article-section">
+            <h2>Visiting orphanage school</h2>
+            <i class="fa-light fa-plus-large"></i>
+          </div>
+          <div class="article-nav-section article-section">
+            <button class="article-nav-button" type="button" onclick="handleLeftClick()">
+              Prev
+            </button>
+            <button class="article-nav-button" type="button" onclick="handleRightClick()">
+              Next
+            </button>
+          </div>
+        </article>
+        <article data-index="3" data-status="inactive">    
+          <div class="article-image-section article-section"></div>
+          <div class="article-description-section article-section">
+            <p>
+              Our main aim is to raise funds to the needy communities .
+            </p>
+          </div>
+          <div class="article-title-section article-section">
+            <h2>Orphanage Funding Support.</h2>
+            <i class="fa-light fa-plus-large"></i>
+          </div>
+          <div class="article-nav-section article-section">
+            <button class="article-nav-button" type="button" onclick="handleLeftClick()">
+              Prev
+            </button>
+            <button class="article-nav-button" type="button" onclick="handleRightClick()">
+              Next
+            </button>
+          </div>
+        </article>
+      </main>
+      <script>
+let activeIndex = 0;
+
+const slides = document.getElementsByTagName("article");
+
+const handleLeftClick = () => {
+  const nextIndex = activeIndex - 1 >= 0 ? activeIndex - 1 : slides.length - 1;
+  
+  const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
+        nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
+        
+  currentSlide.dataset.status = "after";
+  
+  nextSlide.dataset.status = "becoming-active-from-before";
+  
+  setTimeout(() => {
+    nextSlide.dataset.status = "active";
+    activeIndex = nextIndex;
+  });
+}
+
+const handleRightClick = () => {
+  const nextIndex = activeIndex + 1 <= slides.length - 1 ? activeIndex + 1 : 0;
+  
+  const currentSlide = document.querySelector(`[data-index="${activeIndex}"]`),
+        nextSlide = document.querySelector(`[data-index="${nextIndex}"]`);
+  
+  currentSlide.dataset.status = "before";
+  
+  nextSlide.dataset.status = "becoming-active-from-after";
+  
+  setTimeout(() => {
+    nextSlide.dataset.status = "active";
+    activeIndex = nextIndex;
+  });
+}
+const nav = document.querySelector("nav");
+
+const handleNavToggle = () => {  
+  nav.dataset.transitionable = "true";
+  
+  nav.dataset.toggled = nav.dataset.toggled === "true" ? "false" : "true";
+}
+
+window.matchMedia("(max-width: 800px)").onchange = e => {
+  nav.dataset.transitionable = "false";
+
+  nav.dataset.toggled = "false";
+};
+      </script>
+</body>
+</html>

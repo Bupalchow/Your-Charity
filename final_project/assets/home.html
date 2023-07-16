@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Charity | Making a Difference</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1 >Help Us Make a Difference</h1>
+       <p>We are dedicated to creating a positive impact on society.<br> Join us in our mission to bring about change.</p>
+    </main>
+    <nav>
+      <div id="nav-links">
+        <a class="nav-link" href="donate.html">
+          <h2 class="nav-link-label rubik-font">Donate</h2>
+          <img class="nav-link-image" src="https://th.bing.com/th/id/OIP.M5d1z0gmUK5-hsoZOgcPXQHaHa?pid=ImgDet&rs=1" />
+        </a>
+        <a class="nav-link" href="projects.html">
+          <h2 class="nav-link-label rubik-font">Projects</h2>
+          <img class="nav-link-image" src="https://i0.wp.com/thecontextofthings.com/wp-content/uploads/2020/10/dignity-illo.jpg?w=1200" />
+        </a>
+        <a class="nav-link" href="about.html">
+          <h2 class="nav-link-label rubik-font">About Us</h2>
+          <img class="nav-link-image" src="https://static.vecteezy.com/system/resources/previews/000/411/577/original/vector-people-volunteering-and-donating-money-and-items-to-a-charitable-cause.jpg" />
+        </a>
+
+      </div>
+    </nav>
+    
+    <button id="nav-toggle" type="button" onclick="toggleNav()">
+      <i class="open fa-light fa-bars-staggered"></i>
+      <i class="close fa-light fa-xmark-large"></i>
+    </button>
+    <br>
+    <script>
+        const toggleNav = () => {
+  document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
+}
+    </script>
+</body>
+</html>

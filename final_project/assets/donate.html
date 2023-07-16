@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Charity | Donate</title>
+    <link rel="stylesheet" href="donate.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="donate">
+        <div class="container">
+            <h2>Donate to Support Our Cause</h2>
+            <p>Your contribution can make a significant impact on the lives of those in need. Thank you for your generosity!</p>
+            <form id="donation-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="amount">Donation Amount</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter the donation amount" required>
+                <label for="message">Leave a Message (Optional)</label>
+                <textarea id="message" name="message" placeholder="Leave a message for the charity"></textarea>
+                <button type="submit" class="btn-donate"onclick="redirectToNewPage()">Donate Now</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Your Charity. All rights reserved.</p>
+    </footer>
+    <script>
+        function redirectToNewPage() {
+  window.location.href = 'popup.html';
+}
+    </script>
+</body>
+</html>
